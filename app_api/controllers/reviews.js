@@ -61,6 +61,7 @@ module.exports.reviewsReadOne = function (req, res) {
 
 module.exports.reviewsUpdateOne = function (req, res) {
 	sendJsonResponse(res, 200, {"status" : "success"});
+	
 };
 
 module.exports.reviewsDeleteOne = function (req, res) {
