@@ -1,3 +1,7 @@
+/*
+Queries to be executed to populate Loc8r db directly through mongo console interface
+*/
+
 db.locations.save({
 	name: 'Starcups',
 	address: '125 High Street, Reading, RG6 1PS',
@@ -28,7 +32,7 @@ db.locations.update({
 	$push: {
 		reviews: {
 			author: 'Simon Holmes',
-			id: ObjectId(),
+			_id: ObjectId(),
 			rating: 5,
 			timestamp: new Date("Jul 16, 2013"),
 			reviewText: "What a great place. I can't say enough good things about it."
@@ -43,7 +47,7 @@ db.locations.update({
 	$push: {
 		reviews: {
 			author: 'Santa Claus',
-			id: ObjectId(),
+			_id: ObjectId(),
 			rating: 4,
 			timestamp: new Date("Dec 24, 2000"),
 			reviewText: "Nice place. I wish the fireplace was bigger."
@@ -76,15 +80,15 @@ db.locations.save({
 		closed: true
 	}],
 	reviews: {
-		author: 'Simon Holmes',
-		id: ObjectId(),
+		author: 'Gasperino',
+		_id: ObjectId(),
 		rating: 5,
-		timestamp: new Date("Jul 16, 2013"),
-		reviewText: "What a great place. I can't say enough good things about it."
+		timestamp: new Date("Jan 1, 2015"),
+		reviewText: "Let's eat everything!!."
 	}
 })
 
-
+// third location
 db.locations.save({
 	name: 'Burger Queen',
 	address: 'Via Celio Vibenna, Roma, Italy',
@@ -108,9 +112,9 @@ db.locations.save({
 	}],
 	reviews: {
 		author: 'Giulio Cesare',
-		id: ObjectId(),
+		_id: ObjectId(),
 		rating: 5,
-		timestamp: new Date("Jul 16, 3"),
+		timestamp: new Date("Jul 16, 2000"),
 		reviewText: "Best Place in the world!."
 	}
 })
