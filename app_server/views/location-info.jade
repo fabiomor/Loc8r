@@ -43,7 +43,8 @@ block content
         .col-xs-12
           .panel.panel-primary.review-panel
             .panel-heading
-              a.btn.btn-default.pull-right(href='/location/review/new') Add review
+              a.btn.btn-default.pull-right(href="/location/#{location._id}/reviews/new")
+                | Add review
               h2.panel-title Customer reviews
             .panel-body.review-container
               each review in location.reviews
@@ -54,7 +55,9 @@ block content
                         +outputRating(review.rating) 
                         | &nbsp;
                       span.reviewAuthor #{review.author}
-                      small.reviewTimestamp #{review.timeStamp}
+                        | &nbsp;
+                      small.reviewTimestamp
+                        +formatDate(review.createdOn)
                     .col-xs-12
                       p #{review.reviewText}
     .col-xs-12.col-md-3
